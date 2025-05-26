@@ -6,7 +6,8 @@ Acest repository are ca scop principal sprijinirea pregătirii pentru edițiile 
 
 Pentru a evita blocajele, mai jos găsiți datele de contact ale autorilor de probleme. Dacă întâmpinați probleme organizatorice sau aveți întrebări legate de competiție, nu ezitați să ne scrieți pe GitHub sau pe Discord.
 
-👥 Autori probleme
+👥 Autori probleme:
+
 Profesor doctor Alboaie Lenuta
 
 Profesor doctor Ferucio Laurentiu Tiplea
