@@ -1,5 +1,6 @@
 # CTF-FIICode-Probleme
 📌 Despre acest repository
+
 Acest repository are ca scop principal sprijinirea pregătirii pentru edițiile viitoare ale competiției, prin centralizarea soluțiilor propuse de colaboratorii actuali — cărora le mulțumim sincer pentru implicare!
 
 ⚠️ Nu toate problemele din concurs vin însoțite de rezolvări complete. Considerăm că este benefic pentru procesul de învățare ca unele dintre ele să rămână nerezolvate, oferind astfel participanților șansa de a le aborda individual.
