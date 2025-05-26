@@ -1,0 +1,3 @@
+Tudor is trying to set a new and more secure PIN for his card. Can you help him?
+
+CTF format: FIICODE25{PIN}

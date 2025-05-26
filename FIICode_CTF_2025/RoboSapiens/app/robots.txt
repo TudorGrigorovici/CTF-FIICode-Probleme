@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /flagul.php
+Disallow: /admin.php
+
+Note:
+Scoate sefule datele de logare din /chimie/.parole

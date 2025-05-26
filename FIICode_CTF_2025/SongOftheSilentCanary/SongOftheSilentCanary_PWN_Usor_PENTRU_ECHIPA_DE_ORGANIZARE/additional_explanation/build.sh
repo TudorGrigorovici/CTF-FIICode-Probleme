@@ -1,0 +1,1 @@
+gcc vuln.c -o vuln -O2 -static -fPIE -pie -fstack-protector-all -z relro -z now -lseccomp -static -ldl -pthread

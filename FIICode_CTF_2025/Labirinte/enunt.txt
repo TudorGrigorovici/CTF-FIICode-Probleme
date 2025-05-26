@@ -1,0 +1,91 @@
+Labirinte
+
+Descriere labirint:
+Un labirint este format dintr-o matrice NxN, unde N este impar
+O matrice contine urmatoarele caractere:
+'#' - zid
+'.' - spatiu liber
+'S' - pozitia de start
+'X' - pozitia destiantie
+
+Solutia unui labirint este data de o insiruire de caractere "UDLR":
+U: UP
+D: DOWN
+L: LEFT
+R: RIGHT
+
+De exemplu solutia urmatorului labirint este: "DDDLL" deorece S poate ajunge la X (optim) doar prin acesti pasi, o solutia mai complicata si ne-acceptata ar mai fi "DDDRRLLLL"
+#######
+#..#..#
+#.#S.##
+#.#...#
+#.#.###
+#X....#
+#######
+
+Este garantat faptul ca orice labirint are fie o solutie unica, fie mai multe solutii astfel incat 2 solutii nu au aceeasi dimensiune.
+Astfel ca urmatorul labirint este invalid deoarece are 2 solutii identice ca dimensiune: "LDDR" si "RDDL"
+#####
+#.S.#
+#.#.#
+#.X.#
+#####
+
+Rezolvrea unei provocari presupune de fapt rezolvarea a 8 labirinte diferite, toate avand aceleasi dimensiuni
+Labirintele se afla in fisiere cu numele "in_k.bin" unde k este indexul labirintului 0<=k<=7
+--------------------------------------------------------------------------------------------------
+
+- Se dau 8 serii a cate 8 labirinte (8 provocari -> 8x8=64 de labirinte)
+  - in orice serie, labirintele au N acelasi
+  - intre serii N este diferit (pentru ca difera complexitatea), iar o serie cu index mai mare, are N mai mare
+- numai primul labirint din prima serie, este plain-text, toate celelalte sunt criptate cu RC4
+- cheia de criptare a labirintului k este CRC32(Solutie(k-1)) unde Solutie(k-1) se refera la stringul UDLR al solutiei labirintului anterior
+- pentru verificare, aplicand CRC32(-1) pe solutia exemplu de mai sus "DDDLL" obtinem valoarea 0xd4ed11af
+- o alta varianta de CRC32 initializata cu 0 in loc de -1, care nu e ok de folosit aici pentru "DDDLL" este 0xED30194D
+- labirintul in_0.bin din seria 1 se decripteaza cu cheia obtinuta pentru out_7.bin din seria 0, seriile sunt inlantuite
+- cheia obtinuta pentru out_7.bin din ultima serie, este parola de dezarhivare a unei carti arhivate zip, cu parola, iar parola arhivei este flag-ul pe care trebuie sa il gasiti
+- algoritmul de criptare folosit este RC4, iar cheile de criptare sunt valori hex CRC32 cu size 8, in format ASCII
+- in caz ca primele cifre ale hash-ului incep cu 0, dimensiunea finala tot 8 va fi: 0x0007FA14 = "0007FA14"
+- deoarece labirintele au solutie multipla, solutia acceptata este cea cu dimensiunea cea mai mica:
+ intre solutiile "LDDDR", "LLDDDRR" si "RURDDDDDLUL", solutia acceptata este "LDDDR" pentru ca este cea mai mica
+
+Fisierele de intrare vor fi organizate in 8 foldere:
+1_21
+2_101
+3_301
+4_501
+5_1001
+6_1501
+7_2001
+8_2401
+
+Pe langa aceste foldere exista si cartea arhivata zip si protejata cu parola
+Parola care se potriveste la arhiva este hash-ul CRC32 pentru fisierul out_7.bin din folderul 8_2401
+
+Printre altele, pentru a nu pierde timp cu decriptarea, aveti la dispozitie scriptul RC4.py care pornind de la o solutie string de genul "DLLLLLLLLDDLD" care este solutia primului labirint din prima serie de labirinte, obtinem valoarea CRC32 8E3CFC22, cu care putem decripta labirintul 2:
+MAI JOS SE AFLA MATRICEA 1
+#####################
+#...#.....#.........#
+###.###.#.#.#########
+#.#...#.#.#.#.......#
+#.###.#.#.#.#.#####.#
+#.....#.#.#.......#.#
+#.#####.#.#.#######.#
+#...#...#.#...#.....#
+###.#.###.#####.###.#
+#.#.#.#.#...#...#.#.#
+#.#.#.#.###.#.##X.#.#
+#...#.#.....#...#...#
+#.###.###.#####.#.###
+#.S.#...#.......#...#
+#.#.#.#.###########.#
+#.#...#...#.......#.#
+#.#######.#.###.###.#
+#.#.....#.#.#.#.....#
+#.#.###.#.#.#.#######
+#...#.....#.........#
+#####################
+
+Nu exista restrictii pentru modul de rezolvare, sau limbajul folosit.
+Labirintele se gasesc aici:
+https://drive.google.com/drive/folders/1A_rAEMRyo5zZU9soIIEEL-KaGgS8Kgo5?usp=sharing

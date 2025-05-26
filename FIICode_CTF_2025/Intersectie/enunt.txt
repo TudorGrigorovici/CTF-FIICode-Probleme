@@ -1,0 +1,49 @@
+Fie 2 matrici patratice a caror elemente sunt multimi de numere de forma:
+
+A:
+{4,8,2} {16,1,2,4} {32,256} {1,2}
+{1,8} {2,4,8} {2} {8,256}
+{16,64} {1024,256,4} {8,16,512} {4,8,128}
+{4,8,256} {64,1,2048} {32,64,2,8} {256,1,8,2,4}
+
+B:
+{4,2} {32,1,8} {16,1} {2,4,128}
+{1,2,4} {2,128,512} {4,8} {16,64,1}
+{32,64,128} {1,4,32} {8} {4,2,128,512}
+{8,256,16,1} {1,16,32,1024} {1,4,16,64} {1024}
+
+Trebuie sa calculam intersectiile elementelor (multimile) de pe aceleasi pozitii
+Matricea C se va scrie similar cu A si B, intr-un alt fisier (result.txt)
+
+Specificatii:
+1. Matricile se citesc dintr-un fisier, succesiv, cu 1 rand liber intre matrici (numele matricilor nu sunt importante, iar dimensiunea matricilor trebuie dedusa din fisiere, nu exista un camp special pentru asta)
+2. Dimensiunea NxN a matricilor este aceeasi la toate matricile implicate si NU poate depasi 5000x5000 (N max = 5000)
+3. Orice element din matrice poate avea
+   minim - nici un element
+   maxim - 32 de elemente separate prin virgula
+4. Orice element dintr-o multime poate fi
+   minim - 1
+   maxim - 2147483648
+5. toate numerele (daca multimea nu este vida) sunt > 0
+6. matricile de intrare se citesc din fisierul "matrici.txt"
+7. rezultatul se va scrie in fisierul "result.txt"
+
+Exemplu de solutie pentru cazul dat:
+{2,4} {1} {} {2} 
+{1} {2} {} {} 
+{64} {4} {8} {4,128} 
+{8,256} {1} {64} {} 
+
+-------------------------------------------------------------------------------------
+
+Flag-ul este format din suma tuturor elementelor din matricea rezultat.
+Desi in matricea result.txt numerele par sa fie sortate in interiorul elementelor matricii, acest lucru nu este necesar
+De exemplu, pentru cazul anterior, acest flag ar fi: 549
+
+Matricele de intrare se gasesc in fisierul de aici:
+https://drive.google.com/file/d/1tAfkqYvp7lv9YpN-BiHeggSSRQlCsfcI/view?usp=sharing
+Dimensiunea matricilor este 10000x10000
+
+Printre altele se da si un script python (check.py) care calculeaza suma elementelor matricii result.txt
+
+De dragul experimentelor, aveti si un script care genereaza matrici aleatorii (gen.py) la care puteti da ca parametru N (dimensiunea matricilor)

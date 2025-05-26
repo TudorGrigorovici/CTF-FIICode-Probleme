@@ -1,0 +1,7 @@
+British counter-espionage forces have intercepted this message. Can you help us crack it? All we know is that part of the text was encrypted using the Vigenère cipher with the key "AXIS".
+
+CTF format: FIICODE25{plaintext}
+
+Note:
+
+*The plaintext contains only uppercase letters (no spaces or punctuation).

@@ -1,0 +1,9 @@
+A friend of mine dared me to crack this riddle. Can you help me?
+
+CTF format: FIICODE25{plaintext}
+
+Note:
+
+The plaintext contains only uppercase letters.
+
+The plaintext includes spaces (use a space in place of each _ underscore).

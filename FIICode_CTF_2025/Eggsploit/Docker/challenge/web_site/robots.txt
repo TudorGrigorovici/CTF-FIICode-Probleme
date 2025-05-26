@@ -1,0 +1,3 @@
+Disallow: /admin.php
+
+Note for Karen: "Don't leave your token in your folder"
