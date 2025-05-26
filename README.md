@@ -7,14 +7,23 @@ Acest repository are ca scop principal sprijinirea pregătirii pentru edițiile 
 Pentru a evita blocajele, mai jos găsiți datele de contact ale autorilor de probleme. Dacă întâmpinați probleme organizatorice sau aveți întrebări legate de competiție, nu ezitați să ne scrieți pe GitHub sau pe Discord.
 
 👥 Autori probleme
-SOC – Cristea-Olaru Ștefan
-discord: .makisenpai
+Profesor doctor Alboaie Lenuta
+
+Profesor doctor Ferucio Laurentiu Tiplea
+
+Profesor doctorand Vlad Craciun
 
 BG – Asistent doctorand Bălan Gheorghe
 discord: balangheorghe
 
 VT – Asistent doctorand Vițel Silviu-Constantin
 discord: vitelsilviu
+
+SOC – Cristea-Olaru Ștefan
+discord: .makisenpai
+
+GMC - Grosu Mihnea Constantin
+discord:mihnea6337
 
 🛠 Organizare
 Grigorovici Tudor
